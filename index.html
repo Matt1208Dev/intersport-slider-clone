@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Google Font: Jost -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -13,39 +14,30 @@
         <title>Intersport Slider Clone</title>
     </head>
     <body>
-        <div class="slider-container">
+        <main class="slider-container">
+            <!-- Fullscreen pictures -->
             <div class="slider">
                 <img class="slider-img current" data-index="1" src="./images/rafting-jackalope-west.jpg" alt="Groupe de personnes faisant du rafting">
                 <img class="slider-img" data-index="2" src="./images/jump-in-a-lake-tommaso-fornoni.jpg" alt="Homme se jettant d'un ponton dans un lac">
                 <img class="slider-img" data-index="3" src="./images/trekking-sebastien-goldberg.jpg" alt="Homme observant un panorama en montagne">
                 <button>Reserve</button>
             </div>
+            <!-- Slider items -->
             <div class="slider-items">
                 <div class="slider-item current" data-index="1">
-                    <p>Rafting</p>
+                    <p>push your limits</p>
                     <img class="thumbnail" src="./images/rafting-jackalope-west.jpg" alt="Groupe de personnes faisant du rafting">
                 </div>
                 <div class="slider-item" data-index="2">
-                    <p>Diving</p>
+                    <p>Dive in the lake</p>
                     <img class="thumbnail" src="./images/jump-in-a-lake-tommaso-fornoni.jpg" alt="Homme se jettant d'un ponton dans un lac">
                 </div>
                 <div class="slider-item" data-index="3">
-                    <p>Trekking</p>
+                    <p>Discover amazing landscapes</p>
                     <img class="thumbnail" src="./images/trekking-sebastien-goldberg.jpg" alt="Homme observant un panorama en montagne">
                 </div>
             </div>
-            <div class="slider-items-mobile-container">
-                <div class="progress-bar-container current" data-index="1">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="progress-bar-container" data-index="2">
-                    <div class="progress-bar"></div>
-                </div>
-                <div class="progress-bar-container" data-index="3">
-                    <div class="progress-bar"></div>
-                </div>
-            </div>
-        </div>
+        </main>
 
 
         <script src="./script.js"></script>

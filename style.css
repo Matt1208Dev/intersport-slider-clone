@@ -1,3 +1,4 @@
+/* Reset CSS */
 *,
 ::before,
 ::after {
@@ -12,6 +13,7 @@ body {
     font-family: "Jost", sans-serif;
 }
 
+/* Slider */
 .slider-container {
     position: relative;
     width: 100vw;
@@ -25,7 +27,6 @@ body {
 
 .slider-img {
     position: absolute;
-    /* z-index: -1; */
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -35,7 +36,6 @@ body {
 }
 
 .slider-img.current {
-    /* z-index: 1; */
     opacity: 1;
 }
 
@@ -55,6 +55,7 @@ body {
     cursor: pointer;
 }
 
+/* Slider Items */
 .slider-items {
     position: absolute;
     z-index: 10;
@@ -67,11 +68,12 @@ body {
 
 .slider-item {
     position: relative;
-    width: 13.5rem; /* 200px */
-    height: 6rem; /* 64px */
+    min-width: 14.5rem; /* 216px */
+    height: 6rem; /* 96px */
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     padding: 1rem;
     cursor: pointer;
 }
@@ -84,7 +86,7 @@ body {
     border-top: 1px solid rgba(241, 241, 241, 0.5);
 }
 
-/* Marqueur vertical blanc */
+/* Vertical white marker */
 .slider-item.current::before {
     position: absolute;
     top: 0;
@@ -95,6 +97,7 @@ body {
     background-color: #f1f1f1;
 }
 
+/* Filling effect */
 .slider-item.current::after {
     position: absolute;
     z-index: -1;
@@ -119,7 +122,8 @@ body {
 }
 
 .slider-item p {
-    font-size: 1.4rem;
+    width: 12rem; /* 172px */
+    font-size: 1.125rem; /* 18px */
     color: #f1f1f1;
     text-transform: uppercase;
     display: flex;
@@ -127,8 +131,8 @@ body {
 }
 
 .thumbnail {
-    width: 4rem;
-    height: 4rem;
+    width: 4rem; /* 64px */
+    height: 4rem; /* 64px */
 }
 
 .thumbnail img {
@@ -137,6 +141,7 @@ body {
     object-fit: cover;
 }
 
+/* Devices <= 596px */
 @media screen and (width <= 596px) {
     .slider button {
         display: block;
@@ -144,6 +149,7 @@ body {
     }
 }
 
+/* Devices <= 1024px */
 @media screen and (width <= 1024px) {
     .slider-container {
         position: relative;
@@ -154,16 +160,20 @@ body {
         top: 95%;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 4rem);
-        gap: 0.5rem;
-        place-content: center;
+        width: 12.5rem; /* 200px */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slider-items > * {
+        max-width: 4rem; /* 64px */
     }
     .slider-item {
-        padding: 0.1rem;
+        padding: 0.25rem; /* 4px */
         border: none;
-        width: 4rem;
+        min-width: unset;
+        width: 100%;
+        max-width: 4rem; /* 64px */
         height: auto;
         background-color: rgba(241, 241, 241, 0.6);
     }

@@ -1,9 +1,13 @@
+// Variables
 const slider = document.querySelector('.slider');
 const sliderImages = [...document.querySelectorAll(".slider-img")];
 const sliderItems = [...document.querySelectorAll(".slider-item")];
+
+// Index of current slider image
 let currentSliderImg = 1;
 let sliderIntervalID;
 
+// Slider items clic event listener
 sliderItems.map((item) => {
     item.addEventListener("click", handleClick);
 });
@@ -16,6 +20,7 @@ function handleClick(e) {
     sliderIntervalID = startSlider();
 }
 
+// Change the current item
 function changeCurrentItem(index) {
     sliderItems.map((item) => {
         item.classList.remove("current");
@@ -25,6 +30,7 @@ function changeCurrentItem(index) {
     });
 }
 
+// Display in full screen the image whose index is passed as parameter
 function changeSliderImage(index) {
     sliderImages.map((img) => {
         if (img.getAttribute("data-index") === index.toString()) {
@@ -35,6 +41,7 @@ function changeSliderImage(index) {
     });
 }
 
+// currentSliderImg incrementer
 function switchItem() {
     currentSliderImg++;
     if (currentSliderImg > 3) {
@@ -45,12 +52,15 @@ function switchItem() {
     changeSliderImage(currentSliderImg);
 }
 
+// Start the slider
 function startSlider() {
     return setInterval(switchItem, 4000);
 }
 
+// Stop the slider
 function stopSlider(id) {
     clearInterval(id);
 }
 
+// Launch slider
 sliderIntervalID = startSlider();
